@@ -42,8 +42,8 @@ window.onload = function(){
                 out += `<h2 style="font-size:1.2em;">${data[i]['gsx$name']['$t']}</h2>`;
                 out += `<img src="${data[i]['gsx$image']['$t']}" alt="">`;
                 out += `<p class="cost">Артикул: ${data[i]['gsx$cost']['$t']}</p>`;
-                out += `<p class="cost">Производитель: ${data[i]['gsx$kg']['$t']}кг</p>`;                
-                out += `<p class="cost"><button type="button" class="btn btn-success" name="add-to-cart" data="${data[i]['gsx$id']['$t']}">Подробнее</button></p>`;
+                out += `<p class="cost">Производитель: ${data[i]['gsx$kg']['$t']}</p>`;                
+                out += `<p class="cost"><button type="button" onclick="location.href = 'cart.html'">Подробнее</button></p>`;
                 out += `</div>`;
                 out += `</div>`;
             }
