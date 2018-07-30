@@ -19,7 +19,7 @@ window.onload = function(){
         xhr.send();
     }
 
-    getJSON('https://spreadsheets.google.com/feeds/list/1FgKtyBewMWlEzbVKrgILhP07uvGLnOlFG3PTLk415rE/od6/public/values?alt=json', function(err, data){
+    getJSON('https://spreadsheets.google.com/feeds/list/1NXuyAENsOGf_vzHJNfL37bQOlB2CjQqMWAne6BTfmPA/od6/public/values?alt=json', function(err, data){
         console.log(data);
         if (err !== null) {
             alert ('Error: '+err);
@@ -39,11 +39,11 @@ window.onload = function(){
             if (data[i]['gsx$show']['$t']!=0){
                 out += `<div class="col-lg-3 col-md-3 col-sm-2 text-center">`;
                 out += `<div class="goods">`;
-                out += `<h5>${data[i]['gsx$name']['$t']}</h5>`;
+                out += `<h2 style="font-size:1.2em;">${data[i]['gsx$name']['$t']}</h2>`;
                 out += `<img src="${data[i]['gsx$image']['$t']}" alt="">`;
-                out += `<p class="cost">Цена: ${data[i]['gsx$cost']['$t']}</p>`;
-                out += `<p class="cost">На складе: ${data[i]['gsx$kg']['$t']}кг</p>`;
-                out += `<p class="cost"><button type="button" class="btn btn-success" name="add-to-cart" data="${data[i]['gsx$id']['$t']}">Купить</button></p>`;
+                out += `<p class="cost">Артикул: ${data[i]['gsx$cost']['$t']}</p>`;
+                out += `<p class="cost">Производитель: ${data[i]['gsx$kg']['$t']}кг</p>`;                
+                out += `<p class="cost"><button type="button" class="btn btn-success" name="add-to-cart" data="${data[i]['gsx$id']['$t']}">Подробнее</button></p>`;
                 out += `</div>`;
                 out += `</div>`;
             }
